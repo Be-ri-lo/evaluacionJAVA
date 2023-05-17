@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: local
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: "EvaluacionJava"
+  datasource:
+    sqlhost: "localhost"
+    redirectURL : "http://localhost:3000/"
+    username: postgres
+    password: "Checoslovaquia1"
+    url: jdbc:postgresql://localhost:5432/apiRestFul
+    driver-class-name: "org.postgresql.Driver"
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 10
+      connection-test-query: SELECT 1
+      data-source-properties:
+        connectTimeout: 30000
+        socketTimeout: 30000
+      validationTimeout: 300000
+  jpa:
+    show_sql: true
+    generate_ddl: false
+    open-in-view: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      dialect: "org.hibernate.dialect.PostgresSQLDialect"
+      format_sql: false
+      jdbc:
+        "time_zone": "US/Pacific"
+    output:
+      ansi:
+        enabled: "ALWAYS"
+
+
+# App Properties Security jwt
